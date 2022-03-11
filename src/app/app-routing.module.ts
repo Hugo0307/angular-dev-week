@@ -8,6 +8,10 @@ const routes: Routes = [
   {
     path: 'regioes',
     loadChildren: () => import('./regioes/regioes.module').then(m => m.RegioesModule)
+  },
+  {
+    path: 'faixaetaria',
+    loadChildren: () => import('./faixa-etaria/faixa-etaria.module').then(m => m.FaixaEtariaModule)
   }
 ];
 

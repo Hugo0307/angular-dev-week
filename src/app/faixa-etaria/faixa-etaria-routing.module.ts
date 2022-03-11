@@ -1,11 +1,10 @@
+import { FaixaEtariaComponent } from './faixa-etaria/faixa-etaria.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { RegioesComponent } from './regioes/regioes.component';
-
 const routes: Routes = [
   {
-    path:'', component: RegioesComponent
+    path: '', component: FaixaEtariaComponent
   }
 ];
 
@@ -13,4 +12,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class RegioesRoutingModule { }
+export class FaixaEtariaRoutingModule { }
