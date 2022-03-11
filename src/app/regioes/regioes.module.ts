@@ -1,12 +1,10 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {MatSortModule} from '@angular/material/sort';
-import {MatCardModule} from '@angular/material/card';
-import {MatTableModule} from '@angular/material/table';
+import { NgModule } from '@angular/core';
 
-
+import { AppMaterialModule } from '../shared/app-material/app-material.module';
 import { RegioesRoutingModule } from './regioes-routing.module';
 import { RegioesComponent } from './regioes/regioes.component';
+
 
 
 @NgModule({
@@ -16,9 +14,7 @@ import { RegioesComponent } from './regioes/regioes.component';
   imports: [
     CommonModule,
     RegioesRoutingModule,
-    MatSortModule,
-    MatCardModule,
-    MatTableModule
+    AppMaterialModule
   ]
 })
 export class RegioesModule { }
