@@ -12,6 +12,10 @@ const routes: Routes = [
   {
     path: 'faixaetaria',
     loadChildren: () => import('./faixa-etaria/faixa-etaria.module').then(m => m.FaixaEtariaModule)
+  },
+  {
+    path: 'incidencia',
+    loadChildren: () => import('./incidencia/incidencia.module').then(m => m.IncidenciaModule)
   }
 ];
 

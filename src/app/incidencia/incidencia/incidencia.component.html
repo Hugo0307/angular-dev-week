@@ -1,0 +1,35 @@
+<mat-card>
+  <mat-card-subtitle class="subtitle">
+    Consulta de exames de mamografia - Relação de Incidência de exames
+  </mat-card-subtitle>
+  <table mat-table [dataSource]="incidencias" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> Id </th>
+      <td mat-cell *matCellDef="let incidencia"> {{incidencia.id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="regiao_id">
+      <th mat-header-cell *matHeaderCellDef> Id Região </th>
+      <td mat-cell *matCellDef="let incidencia"> {{incidencia.regiao_id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="mes">
+      <th mat-header-cell *matHeaderCellDef> Mês </th>
+      <td mat-cell *matCellDef="let incidencia"> {{incidencia.mes}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="faixa_id">
+      <th mat-header-cell *matHeaderCellDef> Id Faixa Etária </th>
+      <td mat-cell *matCellDef="let incidencia"> {{incidencia.faixa_id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="qnt_exames">
+      <th mat-header-cell *matHeaderCellDef> Quantidade Exames </th>
+      <td mat-cell *matCellDef="let incidencia"> {{incidencia.qnt_exames}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</mat-card>
