@@ -1,7 +1,7 @@
-import { IncidenciaService } from './../service/incidencia.service';
 import { Component, OnInit } from '@angular/core';
 
 import { Incidencia } from './../model/incidencia';
+import { IncidenciaService } from './../service/incidencia.service';
 
 @Component({
   selector: 'app-incidencia',

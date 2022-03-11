@@ -1,6 +1,7 @@
-import { FaixaEtariaComponent } from './faixa-etaria/faixa-etaria.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
+import { FaixaEtariaComponent } from './faixa-etaria/faixa-etaria.component';
 
 const routes: Routes = [
   {
