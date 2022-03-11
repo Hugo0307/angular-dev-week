@@ -10,11 +10,12 @@ import { Regioes } from '../model/regioes';
 export class RegioesComponent implements OnInit {
 
   regioes: Regioes[] = [];
+  displayedColumns = ['id', 'regiao', 'total_exames'];
 
   constructor(private regioesService: RegioesService) { }
 
   ngOnInit(): void {
-    this.regioesService.listRegioes();
+    this.regioes = this.regioesService.listRegioes();
   }
 
 }

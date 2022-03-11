@@ -1,1 +1,47 @@
-<p>regioes works!</p>
+<!--<mat-card>
+  <table matSort (matSortChange)="regioes">
+    <tr>
+      <th mat-sort-header="id">Id</th>
+      <th mat-sort-header="regiao">Região</th>
+      <th mat-sort-header="total_exames">Total de Exames</th>
+    </tr>
+
+    <tr *ngFor="let element of regioes">
+      <td>{{element.id}}</td>
+      <td>{{element.regiao}}</td>
+      <td>{{element.total_exames}}</td>
+    </tr>
+  </table>
+</mat-card> -->
+
+<mat-card>
+  <mat-card-subtitle class="subtitle">Consulta de exames de mamografia - Relação de Regiões</mat-card-subtitle>
+  <table mat-table [dataSource]="regioes" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Id Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> Id </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+    <!-- Regiao Column -->
+    <ng-container matColumnDef="regiao">
+      <th mat-header-cell *matHeaderCellDef> Região </th>
+      <td mat-cell *matCellDef="let element"> {{element.regiao}} </td>
+    </ng-container>
+
+    <!-- Total de Exames Column -->
+    <ng-container matColumnDef="total_exames">
+      <th mat-header-cell *matHeaderCellDef> Total de Exames </th>
+      <td mat-cell *matCellDef="let element"> {{element.total_exames}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+  </table>
+</mat-card>
+

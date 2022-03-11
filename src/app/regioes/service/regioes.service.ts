@@ -10,7 +10,7 @@ export class RegioesService {
 
   listRegioes(): Regioes[] {
     return [
-      { id:1, regiao: 'Nordeste', total_exames: 2450}
+      { id:1, regiao: 'Nordeste', total_exames: 2450 }
     ];
   }
 }
