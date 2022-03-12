@@ -1,0 +1,26 @@
+mat-card {
+  width: 90%;
+  height: 90%;
+  margin: 0 auto;
+
+}
+
+mat-card-title {
+  padding-top: 30px;
+}
+
+mat-card-content {
+  font-family: 'Arial Narrow Bold', sans-serif;
+  font-size: larger;
+  color: black;
+  padding-top: 10px;
+  text-align: justify;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(245, 248, 248);
+  font-size: 18px;
+  padding-left: 10px;
+  padding-right: 10px;
+}

@@ -14,6 +14,7 @@ import { FaixaEtariaComponent } from './faixa-etaria/faixa-etaria.component';
     CommonModule,
     FaixaEtariaRoutingModule,
     AppMaterialModule
-  ]
+  ],
+  exports: [ FaixaEtariaComponent ]
 })
 export class FaixaEtariaModule { }

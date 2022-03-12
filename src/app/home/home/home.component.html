@@ -1,0 +1,48 @@
+<mat-card>
+  <mat-card-title>Câncer de mama</mat-card-title>
+  <mat-card-content>{{ longText }}</mat-card-content>
+  <mat-card-actions align="end">
+    <button mat-raised-button color="accent">
+      <a href="https://www.inca.gov.br/tipos-de-cancer/cancer-de-mama">INCA</a>
+    </button>
+  </mat-card-actions>
+  <mat-accordion>
+    <mat-expansion-panel (opened)="panelOpenState1 = true"
+                         (closed)="panelOpenState1 = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <strong>Consulta por Regiões Brasileiras</strong>
+        </mat-panel-title>
+        <mat-panel-description>
+         {{panelOpenState1 ? 'Ocultar dados' : 'Visualizar dados'}}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <app-regioes></app-regioes>
+    </mat-expansion-panel>
+    <mat-expansion-panel (opened)="panelOpenState2 = true"
+                         (closed)="panelOpenState2 = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <strong>Consulta de exames faixa etária</strong>
+        </mat-panel-title>
+        <mat-panel-description>
+         {{panelOpenState2 ? 'Ocultar dados' : 'Visualizar dados'}}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <app-faixa-etaria></app-faixa-etaria>
+    </mat-expansion-panel>
+    <mat-expansion-panel (opened)="panelOpenState3 = true"
+                         (closed)="panelOpenState3 = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <strong>Consultar os exames realizados</strong>
+        </mat-panel-title>
+        <mat-panel-description>
+          {{panelOpenState3 ? 'Ocultar dados' : 'Visualizar dados'}}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <app-incidencia></app-incidencia>
+    </mat-expansion-panel>
+  </mat-accordion>
+</mat-card>
+

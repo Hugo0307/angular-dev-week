@@ -15,6 +15,7 @@ import { RegioesComponent } from './regioes/regioes.component';
     CommonModule,
     RegioesRoutingModule,
     AppMaterialModule
-  ]
+  ],
+  exports: [ RegioesComponent ]
 })
 export class RegioesModule { }

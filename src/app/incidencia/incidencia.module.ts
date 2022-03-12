@@ -14,6 +14,7 @@ import { IncidenciaComponent } from './incidencia/incidencia.component';
     CommonModule,
     IncidenciaRoutingModule,
     AppMaterialModule
-  ]
+  ],
+  exports: [ IncidenciaComponent ]
 })
 export class IncidenciaModule { }
