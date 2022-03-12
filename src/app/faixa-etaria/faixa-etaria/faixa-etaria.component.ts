@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 
 import { FaixaEtaria } from './../model/faixa-etaria';
 import { FaixaEtariaService } from './../service/faixa-etaria.service';
@@ -8,15 +9,22 @@ import { FaixaEtariaService } from './../service/faixa-etaria.service';
   templateUrl: './faixa-etaria.component.html',
   styleUrls: ['./faixa-etaria.component.css']
 })
-export class FaixaEtariaComponent implements OnInit {
+export class FaixaEtariaComponent implements OnInit, OnDestroy {
 
   faixaEtaria: FaixaEtaria[] = [];
   displayedColumns = ['id', 'faixa_i', 'faixa_n', 'descricao'];
 
+  readonly subscriptions = new Subscription();
+
   constructor(private faixaEtariaService: FaixaEtariaService) { }
 
   ngOnInit(): void {
-    this.faixaEtaria = this.faixaEtariaService.listFaixaEtaria();
+    this.faixaEtariaService.listFaixaEtaria().subscribe((faixaEtaria => {
+      this.faixaEtaria = faixaEtaria;
+    }));
   }
 
+  ngOnDestroy(): void {
+    this.subscriptions.unsubscribe();
+  }
 }

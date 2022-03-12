@@ -1,15 +1,17 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+
+import { FaixaEtaria } from './../model/faixa-etaria';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FaixaEtariaService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   listFaixaEtaria() {
-    return [
-      { id: 1, faixa_i: 10, faixa_n: 15, descricao: 'Entre 10 e 15 anos'}
-    ];
+    const API_URL = '/api/faixaetaria';
+    return this.http.get<FaixaEtaria[]>(API_URL);
   }
 }

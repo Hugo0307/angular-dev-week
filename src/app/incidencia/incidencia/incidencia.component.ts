@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 
 import { Incidencia } from './../model/incidencia';
 import { IncidenciaService } from './../service/incidencia.service';
@@ -8,15 +9,22 @@ import { IncidenciaService } from './../service/incidencia.service';
   templateUrl: './incidencia.component.html',
   styleUrls: ['./incidencia.component.css']
 })
-export class IncidenciaComponent implements OnInit {
+export class IncidenciaComponent implements OnInit, OnDestroy {
 
   incidencias: Incidencia[] = [];
   displayedColumns = ['id', 'regiao_id', 'mes', 'faixa_id', 'qnt_exames'];
 
+  readonly subscription = new Subscription();
+
   constructor(private incidenciaService: IncidenciaService) { }
 
   ngOnInit(): void {
-    this.incidencias = this.incidenciaService.listIncidencias();
+    this.incidenciaService.listIncidencias().subscribe((incidencias => {
+      this.incidencias = incidencias;
+    }));
   }
 
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
 }
