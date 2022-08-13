@@ -19,9 +19,11 @@ export class FaixaEtariaComponent implements OnInit, OnDestroy {
   constructor(private faixaEtariaService: FaixaEtariaService) { }
 
   ngOnInit(): void {
-    this.faixaEtariaService.listFaixaEtaria().subscribe((faixaEtaria => {
+    const subscription = this.faixaEtariaService.listFaixaEtaria().subscribe((faixaEtaria => {
       this.faixaEtaria = faixaEtaria;
     }));
+
+    this.subscriptions.add(subscription);
   }
 
   ngOnDestroy(): void {
